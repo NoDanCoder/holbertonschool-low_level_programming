@@ -9,7 +9,7 @@
 int main(void)
 {
 	/* get LastDigit of random number "n"  and set his position */
-	int i = 0;
+	unsigned int i = 0;
 	char alpha[] = "0123456789";
 
 	for (i = 0; i < strlen(alpha); i++)

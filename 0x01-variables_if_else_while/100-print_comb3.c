@@ -6,7 +6,6 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-int main(void)
 {
 	/* get LastDigit of random number "n"  and set his position */
 	int i = 0;
@@ -25,7 +24,7 @@ int main(void)
 				{
 					putchar(j + '0');
 					putchar(i + '0');
-					if ((i != 9) || (j != 9))
+					if ((i != 9) || (j != 8))
 					{
 						putchar(44);
 						putchar(32);

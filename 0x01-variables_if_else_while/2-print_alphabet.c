@@ -11,7 +11,7 @@ int main(void)
 	unsigned int i = 0;
 	char alpha[] = "abcdefghijklmnopqrstuvwxyz";
 
-	for (i = 0; i < strlen(alpha); i++)
+	for (i = 0; i < 26; i++)
 		putchar(alpha[i]);
 
 	putchar('\n');

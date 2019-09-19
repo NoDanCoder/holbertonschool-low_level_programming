@@ -12,14 +12,13 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
+		putchar(i + '0');
+
 		if (i != 9)
 		{
-			putchar(i + '0');
 			putchar(44);
 			putchar(32);
 		}
-		else
-			putchar(i + '0');
 	}
 
 	putchar('\n');

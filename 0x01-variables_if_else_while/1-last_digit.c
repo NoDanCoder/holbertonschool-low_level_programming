@@ -11,22 +11,23 @@
 int main(void)
 {
 	int n;
+	int lastDigit;
+	char msg[100];
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
 	/* get LastDigit of random number "n"  and set his position */
-	int LastDigit = n % 10;
-	char msg[100];
+	lastDigit = n % 10;
 
-	if (LastDigit > 5)
+	if (lastDigit > 5)
 		strcpy(msg, "and is greater than 5");
-	else if (LastDigit == 0)
+	else if (lastDigit == 0)
 		strcpy(msg, "and is 0");
-	else if (LastDigit < 6 && LastDigit != 0)
+	else if (lastDigit < 6 && lastDigit != 0)
 		strcpy(msg, "and is less than 6 and not 0");
 
-	printf("Last digit of %d is %d %s\n", n, LastDigit, msg);
+	printf("Last digit of %d is %d %s\n", n, lastDigit, msg);
 
 	return (0);
 }

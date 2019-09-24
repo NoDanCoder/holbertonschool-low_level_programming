@@ -37,10 +37,10 @@ void print_times_table(int n)
 					digits[1] = spaceChar;
 
 				if (j != 0)
-					_putchar(digits[0] + '0');
-
-				for (dummie = 1; dummie < 3; dummie++)
-					_putchar(digits[dummie] + '0');
+					for (dummie = 1; dummie < 3; dummie++)
+						_putchar(digits[dummie] + '0');
+				else
+					_putchar('0');
 
 				if (j < n)
 				{

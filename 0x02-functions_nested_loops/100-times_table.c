@@ -18,7 +18,7 @@ void print_times_table(int n)
 	int spaceChar = -16;
 	int result;
 
-	if (n > 0 && n < 15)
+	if (n >= 0 && n < 15)
 	{
 		for (i = 0; i <= n; i++)
 		{

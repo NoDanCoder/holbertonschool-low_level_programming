@@ -40,7 +40,7 @@ void print_times_table(int n)
 			if (j != 0)
 				_putchar(digits[0] + '0');
 
-			for (dummie = 1; dummie > 3; dummie++)
+			for (dummie = 1; dummie < 3; dummie++)
 				_putchar(digits[dummie] + '0');
 
 			if (j < n)

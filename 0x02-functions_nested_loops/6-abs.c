@@ -5,7 +5,7 @@
  * @n: The int to process
  *
  *
- * Return: absolutu number of n
+ * Return: absolute number of n
  * On error: -1 inapropiate entry
  */
 

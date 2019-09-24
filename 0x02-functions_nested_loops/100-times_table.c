@@ -13,6 +13,7 @@ void print_times_table(int n)
 {
 	int i = 0;
 	int j = 0;
+	int dummie = 0;
 	int digits[2];
 	int spaceChar = -16;
 	int result;
@@ -39,8 +40,8 @@ void print_times_table(int n)
 			if (j != 0)
 				_putchar(digits[0] + '0');
 
-			_putchar(digits[1] + '0');
-			_putchar(digits[2] + '0');
+			for (dummie = 1; dummie > 3; dummie++)
+				_putchar(digits[dummie] + '0');
 
 			if (j < n)
 			{

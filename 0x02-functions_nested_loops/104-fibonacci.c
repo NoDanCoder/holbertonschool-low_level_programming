@@ -13,16 +13,20 @@ int main(void)
 	long double x = 0;
 	long double y = 1;
 	long double result = 0;
+	int top = 98;
 
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < top; i++)
 	{
 		result = x + y;
-		printf("%.40Lg", result);
-		if (i != (98 - 1))
+		printf("%.21Lg", result);
+		
+		if (i != (top - 1))
 			printf(", ");
+		
 		x = y;
 		y = result;
 	}
+	
 	putchar('\n');
 
 	return (0);

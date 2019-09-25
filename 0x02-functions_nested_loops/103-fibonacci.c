@@ -14,7 +14,7 @@ int main(void)
 	unsigned long sum = 0;
 	unsigned int limit = 4000000;
 
-	while (1)
+	while (result <= limit)
 	{
 		result = x + y;
 
@@ -27,6 +27,7 @@ int main(void)
 		x = y;
 		y = result;
 	}
+
 	printf("%lu", sum);
 	putchar('\n');
 

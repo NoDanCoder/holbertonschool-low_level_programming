@@ -19,14 +19,14 @@ int main(void)
 	{
 		result = x + y;
 		printf("%.21Lg", result);
-		
+
 		if (i != (top - 1))
 			printf(", ");
-		
+
 		x = y;
 		y = result;
 	}
-	
+
 	putchar('\n');
 
 	return (0);

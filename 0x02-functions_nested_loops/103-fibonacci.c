@@ -28,8 +28,7 @@ int main(void)
 		y = result;
 	}
 
-	printf("%lu", sum);
-	putchar('\n');
+	printf("%lu\n", sum);
 
 	return (0);
 }

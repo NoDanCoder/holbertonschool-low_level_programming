@@ -18,7 +18,7 @@ int main(void)
 	{
 		result = x + y;
 		printf("%.40Lg", result);
-		if (i != (n - 1))
+		if (i != (98 - 1))
 			printf(", ");
 		x = y;
 		y = result;

@@ -8,7 +8,6 @@
 
 int main(void)
 {
-	int  i = 0;
 	unsigned long x = 0, y = 1;
 	unsigned long result = 0;
 	unsigned long sum = 0;

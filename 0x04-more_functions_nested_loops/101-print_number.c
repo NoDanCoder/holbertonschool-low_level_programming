@@ -1,32 +1,6 @@
 #include "holberton.h"
 
 /**
- * pot - gives power of a number
- * @base: base
- * @opr: power
- *
- *
- * Return: power of base given
- * On error: -1 inapropiate entry
- */
-
-int pot(int base, int opr)
-{
-	int i = 0;
-	int result = base;
-
-	for (i = 1; i < opr; i++)
-	{
-		result *= base;
-	}
-
-	if (opr < 1)
-		result = 1;
-
-	return (result);
-}
-
-/**
  * print_number - print numbers by char
  * @n: number input
  *
@@ -57,10 +31,19 @@ void print_number(int n)
 
 	for (i = cont - 1; i >= 0; i--)
 	{
+		int dummie = 0;
+		int pot = 10;
+
+		for (dummie = 1; dummie < i; dummie++)
+			pot *= 10;
+
+		if (i < 1)
+			pot = 1;
+
 		if (i == cont - 1)
-			digit = (tmp / pot(10, i));
+			digit = (tmp / pot);
 		else
-			digit = (tmp / pot(10, i)) % 10;
+			digit = (tmp / pot) % 10;
 
 		_putchar(digit + '0');
 	}

@@ -1,17 +1,6 @@
 #include "holberton.h"
 
 /**
- * print_number - print numbers by char
- * @n: number input
- *
- *
- * Return: nothing
- * On error: -1 inapropiate entry
- */
-
-#include "holberton.h"
-
-/**
  * pot - gives power of a number
  * @base: base
  * @opr: power

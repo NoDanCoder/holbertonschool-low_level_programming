@@ -11,10 +11,10 @@
 
 void print_number(int n)
 {
-	int cont = 1;
-	int tmp = 0;
-	int i = 0;
-	int digit = 0;
+	unsigned int cont = 1;
+	unsigned int tmp = 0;
+	unsigned int i = 0;
+	unsigned int digit = 0;
 
 	tmp = (n < 0) ? n * (-1) : n;
 
@@ -31,8 +31,8 @@ void print_number(int n)
 
 	for (i = cont - 1; i >= 0; i--)
 	{
-		int dummie = 0;
-		int pot = 10;
+		unsigned int dummie = 0;
+		unsigned int pot = 10;
 
 		for (dummie = 1; dummie < i; dummie++)
 			pot *= 10;

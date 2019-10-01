@@ -12,15 +12,16 @@
 void rev_string(char *s)
 {
 	int i = 0;
-	int k = 0;
-	char copy[] = s;
+	int len = 0;
+	char dummie = '\0';
 
-	while (*(s + i) != '\0')
-		i++;
+	while (*(s + len) != '\0')
+		len++;
 
-	for (i -= 1; s - i != s + 1; i--, k++)
-		*(copy + k) = *(s + i);
-
-	for (i = 0; *(s + i) != '\0'; i++)
-		*(s + i) = *(copy + i);
+	for (i = 0; i < (len - 1) / 2; i++)
+	{
+		dummie = *(s + i);
+		*(s + i) = *(s + ((len - 1)) - i);
+		*(s + ((len - 1)) - i) = dummie;
+	}
 }

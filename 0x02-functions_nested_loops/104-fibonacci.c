@@ -13,7 +13,7 @@ int main(void)
 	long double x = 0;
 	long double y = 1;
 	long double result = 0;
-	int top = 97;
+	int top = 98;
 
 	for (i = 0; i < top; i++)
 	{

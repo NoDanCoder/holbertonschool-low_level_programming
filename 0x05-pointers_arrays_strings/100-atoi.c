@@ -36,7 +36,8 @@ int _atoi(char *s)
 	int i = 0;
 	int k = 0;
 	int len = 0;
-	int result = 0;
+	unsigned int result = 0;
+	int toReturn = 0;
 	int minus = 0;
 	int offset = 48;
 
@@ -54,7 +55,7 @@ int _atoi(char *s)
 	for (i--; len > 0; i--, k++, len--)
 		result +=  (*(s + i) - offset) * _pow(10, k);
 
-	result = (minus % 2 != 0) ? result * (-1) : result;
+	toReturn = (minus % 2 != 0) ? result * (-1) : result;
 
-	return (result);
+	return (toReturn);
 }

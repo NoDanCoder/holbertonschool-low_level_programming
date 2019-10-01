@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * puts2 - prints even character given
@@ -11,8 +12,11 @@
 
 void puts2(char *str)
 {
-	for (; *str != '\0'; str += 2)
-		_putchar(*str);
+	int i = 0;
+
+	for (i = 0; *str != '\0'; str++, i++)
+		if (i % 2 == 0 && *str != '\0')
+			_putchar(*str);
 
 	_putchar('\n');
 }

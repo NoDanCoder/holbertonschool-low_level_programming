@@ -17,10 +17,8 @@ int _strcmp(char *s1, char *s2)
 	int equal = 0;
 
 	for (i = 0; (*(s1 + i) || *(s2 + i)) && !equal; i++)
-		if (*(s1 + i) < *(s2 + i))
-			equal = -15;
-		else if (*(s1 + i) > *(s2 + i))
-			equal = 15;
+		if (*(s1 + i) != *(s2 + i))
+			equal = *(s1 + i) - *(s2 + i);
 
 	return (equal);
 }

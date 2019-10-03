@@ -5,6 +5,7 @@
  * n is greater than src, copy upto '\0'
  * @dest: var where changes will be stored
  * @src: source to copy
+ * @n: delimiter
  *
  *
  * Return: address where is stores the result

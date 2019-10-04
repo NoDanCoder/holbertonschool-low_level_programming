@@ -17,7 +17,7 @@ char *leet(char *str)
 	int i = 0;
 
 	for (cnt = 0; *str; str++, cnt++)
-		for (i = 0; replace[i]; i++)
+		for (i = 0; i <= 4; i++)
 			if (original[i] == *str || original[i] + 32 == *str)
 			{
 				*str = replace[i];

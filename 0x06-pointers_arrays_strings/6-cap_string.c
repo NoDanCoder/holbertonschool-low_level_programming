@@ -17,7 +17,7 @@ char *cap_string(char *str)
 	int cnt = 0;
 	int i = 0;
 
-	if(*str >= 'a' &&  *str <= 'z')
+	if (*str >= 'a' &&  *str <= 'z')
 		*str -= 32;
 
 	for (cnt = 0; *str; str++, cnt++)

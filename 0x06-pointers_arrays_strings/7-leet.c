@@ -1,12 +1,11 @@
 #include "holberton.h"
 
 /**
- * leet - replace a set of letter for numbers, in other words,
- * function that encodes a string into 1337.
+ * leet - leet codification
  * @str: string to operate
  *
  *
- * Return: coded text
+ * Return: codificated text
  * On error: -1 inapropiate entry
  */
 
@@ -25,5 +24,5 @@ char *leet(char *str)
 				break;
 			}
 
-	return (str - cnt);
+	return (str -= cnt);
 }

@@ -13,8 +13,9 @@ char *string_toupper(char *n)
 {
 	int cnt = 0;
 
-	for (cnt = 0; *n && *n <= 'a' && *n >= 'z'; n++, cnt++)
-		*n = *n - 32;
+	for (cnt = 0; *n; n++, cnt++)
+		if (*n >= 'a' && *n <= 'z')
+			*n -= 32;
 
 	return (n - cnt);
 }

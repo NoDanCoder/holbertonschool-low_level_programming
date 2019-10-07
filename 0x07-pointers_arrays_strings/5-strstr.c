@@ -11,6 +11,7 @@
  * On error: -1 inapropiate entry
  */
 
+
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int cnt = 0;
@@ -21,9 +22,9 @@ char *_strstr(char *haystack, char *needle)
 		needle = org;
 		cnt = 0;
 		if (*needle == *haystack)
-		for (; *needle && *haystack == *needle; needle++, haystack++)
-		cnt++;
+			for (; *needle && *haystack == *needle; needle++, haystack++)
+				cnt++;
 	}
 
-	return ((*haystack) ? haystack - cnt - 1 : haystack);
+	return ((*haystack) ? haystack - (cnt + 1) : 0);
 }

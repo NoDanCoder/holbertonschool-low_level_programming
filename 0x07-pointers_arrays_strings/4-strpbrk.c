@@ -13,13 +13,12 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int cnt = 0;
 	char *org = accept;
 
-	for (; *s && !cnt; s++)
-		for (accept = org; *accept && !cnt; accept++)
+	for (; *s; s++)
+		for (accept = org; *accept; accept++)
 			if (*s == *accept)
-				cnt++;
+				return (s);
 
-	return ((*s) ? s - 1 : s);
+	return (0);
 }

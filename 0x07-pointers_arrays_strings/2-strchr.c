@@ -14,11 +14,8 @@
 
 char *_strchr(char *s, char c)
 {
-	int found = 0;
+	while (*s && !(*s == c))
+		s++;
 
-	for (; *s && !found; (!found) ? s++ : s)
-		if (*s == c)
-			found = 1;
-
-	return ((found || *s == c) ? s : 0);
+	return ((*s == c) ? s : 0);
 }

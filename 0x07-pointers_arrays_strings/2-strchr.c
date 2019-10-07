@@ -14,8 +14,8 @@
 
 char *_strchr(char *s, char c)
 {
-	while (*s != c && *s)
+	while (*s != c)
 		s++;
 
-	return ((*s) ? s : 0);
+	return (s);
 }

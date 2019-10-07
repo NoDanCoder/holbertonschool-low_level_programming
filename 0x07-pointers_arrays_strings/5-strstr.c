@@ -14,7 +14,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int cnt = 0;
+	int cnt = 0;
 	char *org = needle;
 
 	for (; *haystack && *needle; haystack++)
@@ -22,9 +22,9 @@ char *_strstr(char *haystack, char *needle)
 		needle = org;
 		cnt = 0;
 		if (*needle == *haystack)
-			for (; *needle && *haystack == *needle; needle++, haystack++)
+			for (; *needle && (*haystack == *needle); needle++, haystack++)
 				cnt++;
 	}
 
-	return ((*org) ? haystack - (cnt + 1) : 0);
+	return ((*org && *haystack) ? haystack - (cnt + 1) : 0);
 }

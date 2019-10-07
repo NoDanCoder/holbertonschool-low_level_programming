@@ -26,5 +26,5 @@ char *_strstr(char *haystack, char *needle)
 				cnt++;
 	}
 
-	return ((*haystack) ? haystack - (cnt + 1) : 0);
+	return ((*org) ? haystack - (cnt + 1) : 0);
 }

@@ -14,8 +14,11 @@
 
 char *_strchr(char *s, char c)
 {
-	while (*s != c)
-		s++;
+	int found = 0;
 
-	return (s);
+	for (; *s && !found; (!found) ? s++ : s)
+		if (*s == c)
+			found = 1;
+
+	return ((found || *s == c) ? s : 0);
 }

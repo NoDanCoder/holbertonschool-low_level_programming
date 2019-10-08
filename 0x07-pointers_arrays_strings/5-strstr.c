@@ -1,6 +1,26 @@
 #include "holberton.h"
 
 /**
+ * _strchr - search into "s" upto find "c", then gives the addres
+ * where was found
+ * @s: string input
+ * @c: char to search
+ *
+ *
+ * Return: address where is the char into string if not found,
+ * then return 'NULL'
+ * On error: -1 inapropiate entry
+ */
+
+char *_strchr(char *s, char c)
+{
+	while (*s && !(*s == c))
+		s++;
+
+	return ((*s == c) ? s : 0);
+}
+
+/**
  * _strstr - search "needle" string into "haystack",
  * if found gives the addres where was found, else NULL
  * @haystack: string base
@@ -11,20 +31,21 @@
  * On error: -1 inapropiate entry
  */
 
-
 char *_strstr(char *haystack, char *needle)
 {
 	int cnt = 0;
-	char *org = needle;
+	char *search = _strchr(haystack, *needle);
 
-	for (; *haystack && *needle; haystack++)
+	while (search != NULL)
 	{
-		needle = org;
-		cnt = 0;
-		if (*needle == *haystack)
-			for (; *needle && (*haystack == *needle); needle++, haystack++)
-				cnt++;
+		for (haystack = search; *needle && *haystack == *needle; needle++)
+			cnt++, haystack++;
+
+		if (!*needle)
+			return (haystack - cnt);
+
+		search = _strchr(haystack, *needle);
 	}
 
-	return ((*org && *haystack) ? haystack - (cnt + 1) : 0);
+	return (0);
 }

@@ -36,7 +36,7 @@ char *_strstr(char *haystack, char *needle)
 	int cnt = 0;
 	char *search = _strchr(haystack, *needle);
 
-	while (search && *needle)
+	while (search)
 	{
 		for (haystack = search; *needle && *haystack == *needle; needle++)
 			cnt++, haystack++;

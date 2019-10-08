@@ -27,7 +27,7 @@ char *_strchr(char *s, char c)
  * @needle: string to search on base
  *
  *
- * Return: address where string was found
+ * Return: (2) address where string was found
  * On error: -1 inapropiate entry
  */
 
@@ -36,7 +36,7 @@ char *_strstr(char *haystack, char *needle)
 	int cnt = 0;
 	char *search = _strchr(haystack, *needle);
 
-	while (search != NULL)
+	while (search && *needle)
 	{
 		for (haystack = search; *needle && *haystack == *needle; needle++)
 			cnt++, haystack++;
@@ -44,6 +44,8 @@ char *_strstr(char *haystack, char *needle)
 		if (!*needle)
 			return (haystack - cnt);
 
+		needle -= cnt;
+		cnt = 0;
 		search = _strchr(haystack, *needle);
 	}
 

@@ -16,7 +16,7 @@ int _sqrt_opr(int x, int y)
 	if (y * y > x)
 		return (-1);
 
-	return ((y * y == x) ? y : _pow_recursion(x, y + 1));
+	return ((y * y == x) ? y : _sqrt_opr(x, y + 1));
 }
 
 /**
@@ -30,5 +30,5 @@ int _sqrt_opr(int x, int y)
 
 int _sqrt_recursion(int n)
 {
-	_pow_recursion(n, 0);
+	return (_sqrt_opr(n, 0));
 }

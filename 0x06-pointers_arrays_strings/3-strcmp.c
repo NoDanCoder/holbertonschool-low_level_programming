@@ -1,13 +1,13 @@
 #include "holberton.h"
 
 /**
- * _strcmp - compare two words, (char different) a > b = 15,
- * (char different) a < b = -15, (complete string) a == b = 0
+ * _strcmp - compare two words char by char if one is diferent
+ * return the diference between them chars
  * @s1: first string "a"
  * @s2: second string "b"
  *
  *
- * Return: address where is stores the result
+ * Return: diference between chars or 0 if is equal
  * On error: -1 inapropiate entry
  */
 

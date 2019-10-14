@@ -54,14 +54,6 @@ int main(int argc, char **argv)
 		}
 	}
 
-	if (carry)
-	{
-		printf("%d\n", carry);
-		exit(EXIT_SUCCESS);
-	}
-	else
-	{
-		printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
+	printf("%d\n", carry);
+	exit(EXIT_SUCCESS);
 }

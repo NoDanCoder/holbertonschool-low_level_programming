@@ -64,13 +64,14 @@ int **alloc_grid(int width, int height)
 {
 	int **arr = NULL;
 	int i = 0;
+	int corrupt = 0;
 
 	arr = malloc(height * sizeof(char *));
 
 	if (!arr || width <= 0 || height <= 0)
 		return (NULL);
 
-	for (i = 0; i < height && corrupt != 0; i++)
+	for (i = 0; i < height && corrupt != 1; i++)
 	{
 		arr[i] = create_array_int(width, 0);
 

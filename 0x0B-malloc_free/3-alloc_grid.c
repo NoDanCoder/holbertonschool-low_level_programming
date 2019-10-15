@@ -62,13 +62,12 @@ int *create_array_int(unsigned int size, int c)
 
 int **alloc_grid(int width, int height)
 {
-	int **arr = malloc(height * sizeof(int));
+	int **arr = NULL;
 	int i = 0;
 
-	if (width <= 0 || height <= 0)
-		return (NULL);
+	arr = malloc(height * sizeof(char *));
 
-	if (!arr)
+	if (!arr || width <= 0 || height <= 0)
 		return (NULL);
 
 	for (i = 0; i < height; i++)

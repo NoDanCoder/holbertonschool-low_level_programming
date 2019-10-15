@@ -60,6 +60,10 @@ char *str_concat(char *s1, char *s2)
 	s2 = (s2) ? s2 : "";
 
 	arr = malloc(((_strlen(s1) + _strlen(s2))  * sizeof(*arr)) + 1);
+
+	if (!arr)
+		return (NULL);
+
 	_strcat(arr, s1);
 	_strcat(arr, s2);
 

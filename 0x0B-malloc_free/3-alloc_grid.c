@@ -73,15 +73,18 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		arr[i] = create_array_int(width, 0);
-		
-		if (!arr[i])
+
+		if (!(arr[i]))
 		{
-			for (i -= 1; i >= 0; i--)
+			for (; i >= 0; i--)
 			{
-				free(arr[i]);
-				arr[i] = NULL;
+				if (arr[i])
+				{
+					free(arr[i]);
+					arr[i] = NULL;
+				}
 			}
-			
+
 			break;
 		}
 	}

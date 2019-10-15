@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * _memset - replace from start to "n", to char "b",
- * into "s" address
+ * _memset - replace from start to "n", the characters
+ * to char "b", into "s" address
  * @s: var where changes will be stored
- * @b: source to replace
+ * @b: char to set into "s"
  * @n: delimiter
  *
  *

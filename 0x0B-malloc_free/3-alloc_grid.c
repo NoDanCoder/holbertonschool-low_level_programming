@@ -81,14 +81,13 @@ int **alloc_grid(int width, int height)
 
 	if (corrupt)
 	{
-		for (i = i - 1; i >= 0; i--)
-		{
-			if (arr[i] != 0)
+		while (i--)
+			if (arr[i])
 			{
 				free(arr[i]);
 				arr[i] = NULL;
 			}
-		}
+		
 		free(arr);
 		arr = NULL;
 	}

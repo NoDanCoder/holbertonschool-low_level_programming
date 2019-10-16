@@ -117,7 +117,7 @@ char **strtow(char *str)
 	char **orgArr = NULL;
 	int words = 0;
 
-	if (!*str || !str)
+	if (!str || !*str)
 		return (NULL);
 
 	for (; str; str = next_word(str))

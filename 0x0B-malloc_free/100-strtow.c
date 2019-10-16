@@ -124,6 +124,9 @@ char **strtow(char *str)
 		if (*str != ' ' && *str)
 			words++;
 
+	if (!words)
+		return (NULL);
+
 	/* adding 'sizeof(char *)' for NULL pointer at last element (flag)*/
 	arr = malloc((words  * sizeof(char *)) + sizeof(char *));
 	orgArr = arr;

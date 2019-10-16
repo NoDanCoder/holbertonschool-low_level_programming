@@ -135,8 +135,12 @@ char **strtow(char *str)
 		if (*str != ' ' && *str)
 		{
 			*arr = get_single_word(str);
+
 			if (!*arr)
+			{
 				free_grid_char(orgArr);
+				return (NULL);
+			}
 			else
 				arr++;
 		}

@@ -87,20 +87,6 @@ char *next_word(char *str)
 }
 
 /**
- * _strlen - function that returns the length of a string
- * @s: string address
- *
- *
- * Return: nothing
- * On error: -1 inapropiate entry
- */
-
-int _strlen(char *s)
-{
-	return ((!*s) ? 0 : 1 + _strlen(s + 1));
-}
-
-/**
  * strtow - function that recive a sentence of multiple words,
  * and gives a matrix where each word is a element
  * @str: string address
@@ -129,10 +115,11 @@ char **strtow(char *str)
 
 	/* adding 'sizeof(char *)' for NULL pointer at last element (flag)*/
 	arr = malloc((words  * sizeof(arr)) + sizeof(arr));
-	orgArr = arr;
 
 	if (!arr)
 		return (NULL);
+
+	orgArr = arr;
 
 	for (str = orgStr; str; str = next_word(str))
 		if (*str != ' ' && *str)

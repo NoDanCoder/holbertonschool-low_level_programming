@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * free_grid_char - function that frees a 2 dimensional grid previously created
@@ -45,16 +46,16 @@ char  *get_single_word(char *str)
 	char *arr;
 	int cnt = 0;
 
-	while (*str != ' ')
-		str++, cnt++;
+	while (*org != ' ' && *org)
+		org++, cnt++;
 
 	arr = malloc(cnt * sizeof(*arr) + 1);
 
 	if (!arr)
 		return (NULL);
 
-	for (str = org; *str != ' '; str++, arr++)
-		*arr = *str;
+	for (org = str; *org != ' ' && *org; org++, arr++)
+		*arr = *org;
 
 	*arr = '\0';
 

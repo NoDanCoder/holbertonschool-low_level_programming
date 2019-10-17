@@ -38,7 +38,7 @@ char *_strcat_size(char *dest, char *src, unsigned int size)
 	unsigned int i = 0;
 	int count = 0;
 
-	if (!size)
+	if (!size || !*src)
 		return (dest);
 
 	for (i = 0; *(dest + i); i++)
@@ -92,11 +92,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	lenConcat = (_strlen(s2) < n) ? _strlen(s2) : n;
 
 	arr = malloc(((_strlen(s1) + lenConcat)  * sizeof(*arr)) + 1);
-	*arr = '\0';
 
 	if (!arr)
 		return (NULL);
 
+	*arr = '\0';
 	_strcat_size(arr, s1, intMax);
 	_strcat_size(arr, s2, n);
 

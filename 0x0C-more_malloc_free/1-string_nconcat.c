@@ -41,7 +41,7 @@ char *_strcat_size(char *dest, char *src, unsigned int size)
 	for (i = 0; *(dest + i); i++)
 		count++;
 
-	for (i = 0; *(src + i) && (i < size); i++)
+	for (i = 0; *(src + i) && (i < (size - 1)); i++)
 		*(dest + count + i) = *(src + i);
 
 	i = (i) ? i : 1;

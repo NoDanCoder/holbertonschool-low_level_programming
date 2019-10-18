@@ -2,29 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strcpy - copy a source input ont destinated input
- * @dest: target where will be stored the input
- * @src: source to copy from
- *
- *
- * Return: dest address
- * On error: -1 inapropiate entry
- */
-
-char *_strcpy(char *dest, char *src)
-{
-	int i = 0;
-
-	for (i = 0; *(src + i) != '\0'; i++)
-		*(dest + i) = *(src + i);
-
-	*(dest + i) = *(src + i); /* adding '\0' character */
-
-	return (dest);
-}
-
-/**
- * realloc - function that reallocates a memory block using malloc and free
+ * _realloc - function that reallocates a memory block using malloc and free
  * @ptr: is a pointer to the memory previously allocated with a call to
  * malloc: malloc(old_size)
  * @old_size: is the size, in bytes, of the allocated space for ptr
@@ -38,6 +16,8 @@ char *_strcpy(char *dest, char *src)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *newPtr;
+	unsigned int i;
+	char *dummie = ptr;
 
 	if (!new_size && ptr)
 	{
@@ -53,19 +33,21 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			return (NULL);
 	}
 
-	else if (new_size <= old_size)
+	else if (new_size == old_size)
 		return (ptr);
 
-	else if (new_size > old_size)
+	else
 	{
 		newPtr = malloc(new_size);
 
 		if (!newPtr)
 			return (NULL);
 
-		*newPtr = '\0';
+		for (i = 0; i < new_size && i < old_size; i++)
+			*(newPtr + i) = *(dummie + i);
 
-		_strcpy(newPtr, ptr);
+		*(newPtr + i) = '\0';
+
 	}
 
 	free(ptr);

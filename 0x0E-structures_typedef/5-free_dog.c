@@ -2,15 +2,11 @@
 #include <stdlib.h>
 
 /**
- * init_dog - function that initialize a variable of
- * type "struct dog"
+ * free_dog - function that frees "dog structure pointer"
  * @d: pointer to the struct
- * @name: name property of "struct dog *d"
- * @age: age property of "struct dog *d"
- * @owner: owner property of "struct dog *d"
  *
  *
- * Return: nothing|
+ * Return: nothing
  * On error: -1 inapropiate entry
  */
 

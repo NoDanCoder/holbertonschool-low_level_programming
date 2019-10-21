@@ -96,8 +96,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (!newObj->owner)
 	{
-		free(newObj);
 		free(name);
+		free(newObj);
 		return (NULL);
 	}
 

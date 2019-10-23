@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -19,11 +20,11 @@
 
 int main(int argc, char *argv[])
 {
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
-	char userOpr = *argv[2];
+	int a = 0;
+	int b = 0;
+	char userOpr;
 	int result;
-	char opr[] = "+-*/%";
+	char opr[] = {'+', '-', '*', '/', '%'};
 
 	if (argc != 4)
 	{
@@ -31,8 +32,12 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	else if (opr[0] != userOpr && opr[1] != userOpr && opr[2] != userOpr &&
-		opr[3] != userOpr && opr[4] != userOpr)
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	userOpr = *argv[2];
+
+	if ((opr[0] != userOpr && opr[1] != userOpr && opr[2] != userOpr &&
+		opr[3] != userOpr && opr[4] != userOpr) || strlen(&userOpr) > 1)
 	{
 		printf("Error\n");
 		return (99);

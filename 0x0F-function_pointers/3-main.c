@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	userOpr = *argv[2];
 
 	if ((opr[0] != userOpr && opr[1] != userOpr && opr[2] != userOpr &&
-		opr[3] != userOpr && opr[4] != userOpr) || strlen(&userOpr) > 1)
+		opr[3] != userOpr && opr[4] != userOpr) || strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
 		return (99);

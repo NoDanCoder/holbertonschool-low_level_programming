@@ -1,6 +1,6 @@
 	SECTION .data
 msg: db "Hello, Holberton", 10
-     
+
 	SECTION .text
 	global main
 main:

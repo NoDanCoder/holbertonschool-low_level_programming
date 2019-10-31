@@ -64,8 +64,12 @@ void print_float (va_list inp)
 void print_string(va_list inp)
 {
 	char *temp = va_arg(inp, char *);
+	char *strToPrint = temp;
 
-	printf("%s", (temp) ? temp : "(nil)");
+	if (!temp)
+		strToPrint = "(nil)";
+
+	printf("%s", strToPrint);
 }
 
 /**
@@ -103,7 +107,7 @@ void print_all(const char * const format, ...)
 
 	/* search letter by letter */
 	i = 0;
-	while (format[i])
+	while (format && format[i])
 	{
 		/* search for compatible function */
 		k = 0;

@@ -24,27 +24,33 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buffer;
 
 	if (!filename)
-		return(0);
+		return (0);
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-		return(0);
+		return (0);
 
 	buffer = malloc(letters + 1);
 		if (!buffer)
-			return(0);
+			return (0);
 
 	readStatus = read(file, buffer, letters);
 	if (readStatus == -1)
-		return(0);
+	{
+		free(buffer);
+		return (0);
+	}
 
 	buffer[readStatus] = '\0';
 
 	writeStatus = write(STDOUT_FILENO, buffer, readStatus);
 	if (writeStatus == -1)
-		return(0);
+	{
+		free(buffer);
+		return (0);
+	}
 
 	free(buffer);
 
-	return(writeStatus);
+	return (writeStatus);
 }

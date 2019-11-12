@@ -43,6 +43,9 @@ int create_file(const char *filename, char *text_content)
 	if (file == -1)
 		return (-1);
 
+	if (!text_content)
+		return (1);
+
 	writeStatus = write(file, text_content, _strlen(text_content));
 	if (writeStatus == -1)
 		return (-1);

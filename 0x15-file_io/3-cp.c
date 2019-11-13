@@ -77,6 +77,8 @@ int main(int argc, char *argv[])
 		readStatus = read(srcFile, buffer, 1024);
 		if (readStatus == -1)
 			catchError(98, argv, 0);
+		else if (!readStatus)
+			break;
 
 		writeStatus = write(destFile, buffer, readStatus);
 		if (writeStatus == -1)

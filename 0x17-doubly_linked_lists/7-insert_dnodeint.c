@@ -2,13 +2,16 @@
 #include "lists.h"
 
 /**
- * add_dnodeint - function that adds a new node at the beginning
- * of a dlistint_t list
- * @head: dlistint_t list address
- * @n: data to insert into new node
+ * insert_dnodeint_at_index - function that inserts a new node at a given
+ * position
+ * @h: dlistint_t list address
+ * @idx: is the index of the list where the new node should be added. Index
+ * starts at 0
+ * @n: number to insert into new node
  *
  * Return: the address of the new element, or NULL if it failed
- * On error: Nothing
+ * On error: if it is not possible to add the new node at index idx, do not
+ * add the new node and return NULL
  *
  */
 

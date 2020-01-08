@@ -117,11 +117,10 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				options[k].f(args);
+				separator = ", ";
 			}
 			k++;
 		}
-		separator = ", ";
-
 		i++;
 	}
 	printf("\n");

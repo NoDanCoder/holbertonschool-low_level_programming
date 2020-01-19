@@ -24,9 +24,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!new)
 		return (0);
 
-	new->key = (char *)key;
+	new->key = strdup(key);
 	new->value = strdup(value);
-	if (!(new->value))
+	if (!(new->value) || !(new->key))
 		return (0);
 
 	index = key_index(keyGet, ht->size);

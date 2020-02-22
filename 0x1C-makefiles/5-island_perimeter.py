@@ -4,33 +4,25 @@ def island_perimeter(grid):
     """ Get perimeter of a island inside a matrix """
     total = 0
 
-    for posY, y in enumerate(grid):
-        for posX, x in enumerate(y):
-            if x == 1:
-                total += get_perimeter(grid, (posX, posY))
+    for y in range(len(grid)):
+        for x in range(len(grid[y])):
+            if grid[y][x]:
+                if indexExist(grid, x-1, y) == 0:
+                    total += 1
+                if indexExist(grid, x+1, y) == 0:
+                    total += 1
+                if indexExist(grid, x, y-1) == 0:
+                    total += 1
+                if indexExist(grid, x, y+1) == 0:
+                    total += 1
 
     return total
 
-def get_perimeter(grid, pos):
-    """ get num of sides that touch the sea """
-    x = pos[0]
-    y = pos[1]
-    add = 0
-
-    if indexExist(grid, (y, x-1)) == 0:
-        add += 1
-    if indexExist(grid, (y, x+1)) == 0:
-        add += 1
-    if indexExist(grid, (y-1, x)) == 0:
-        add += 1
-    if indexExist(grid, (y+1, x)) == 0:
-        add += 1
-
-    return add
-
-def indexExist(grid, pos):
+def indexExist(grid, x, y):
     """ check if the position is valid """
     try:
-        return grid[pos[0]][pos[1]]
-    except:
+        if x < 0 or y < 0:
+            return 0
+        return grid[y][x]
+    except IndexError:
         return 0

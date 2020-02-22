@@ -5,21 +5,14 @@
 def island_perimeter(grid):
     """ Get perimeter of a island inside a matrix """
     total = 0
-    for y in range(len(grid)):
-        for x in range(len(grid[y])):
+    lenX, lenY = len(grid[0]), len(grid)
+
+    for y in range(lenY):
+        for x in range(lenX):
             if grid[y][x]:
-                total += indexExist(grid, x-1, y)
-                total += indexExist(grid, x+1, y)
-                total += indexExist(grid, x, y-1)
-                total += indexExist(grid, x, y+1)
+                total += not x or not grid[y][x-1]
+                total += not y or not grid[y-1][x]
+                total += x == lenX-1 or not grid[y][x+1]
+                total += y == lenY-1 or not grid[y+1][x]
+
     return total
-
-
-def indexExist(grid, x, y):
-    """ check if the position is valid """
-    try:
-        if x < 0 or y < 0:
-            return 1
-        return not grid[y][x]
-    except IndexError:
-        return 1

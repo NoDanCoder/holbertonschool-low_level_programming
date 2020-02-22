@@ -1,4 +1,8 @@
 # compile if already have modified files
+# clean: deletes temp files and executable
+# oclean: remove obj files
+# fclean: clean temp, executable one, and obj files
+# re: force compilation
 
 CC = gcc
 SRC = main.c holberton.c

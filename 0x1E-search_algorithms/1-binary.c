@@ -15,10 +15,10 @@ void print_range(int *array, int from, int upto)
 
 	printf("Searching in array: ");
 
-	for (array += from; array <= limit; array++)
+	for (array += from; array < limit; array++)
 		printf("%d, ", *array);
 
-	printf("\b\b\033[K\n");
+	printf("%d\n", *array);
 }
 
 /**

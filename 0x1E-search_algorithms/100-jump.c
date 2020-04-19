@@ -31,7 +31,7 @@ int jump_search(int *array, size_t size, int value)
 				printf(search_msg, pos, array[pos]);
 
 			pos -= (pos == 0) ? 0 : block;
-			printf(success_msg, pos - block, pos);
+			printf(success_msg, pos, pos + block);
 			break;
 		}
 

@@ -11,14 +11,14 @@
  */
 void print_range(int *array, int from, int upto)
 {
-        int *limit = array + upto;
+	int *limit = array + upto;
 
-        printf("Searching in array: ");
+	printf("Searching in array: ");
 
-        for (array += from; array < limit; array++)
-                printf("%d, ", *array);
+	for (array += from; array < limit; array++)
+		printf("%d, ", *array);
 
-        printf("%d\n", *array);
+	printf("%d\n", *array);
 }
 
 /**
@@ -33,27 +33,27 @@ void print_range(int *array, int from, int upto)
  */
 int binary_search(int *array, size_t size, int value)
 {
-        int r = size - 1;
-        int l = 0;
-        int m = 0;
+	int r = size - 1;
+	int l = 0;
+	int m = 0;
 
-        if (!array)
-                return (-1);
+	if (!array)
+		return (-1);
 
-        while (l <= r)
-        {
-                print_range(array, l, r);
-                m = (l + r) / 2;
+	while (l <= r)
+	{
+		print_range(array, l, r);
+		m = (l + r) / 2;
 
-                if (array[m] > value)
-                        r = m - 1;
-                else if (array[m] < value)
-                        l = m + 1;
-                else
-                        return (m);
-        }
+		if (array[m] > value)
+			r = m - 1;
+		else if (array[m] < value)
+			l = m + 1;
+		else
+			return (m);
+	}
 
-        return (-1);
+	return (-1);
 }
 
 /**
@@ -88,5 +88,5 @@ int exponential_search(int *array, size_t size, int value)
 	limit = (m < size) ? (m / 2) + 1 : size - (m / 2);
 	out = binary_search(&array[m / 2], limit, value);
 
-	return (out != -1) ? out + ( int )(m / 2) : -1;
+	return ((out != -1) ? out + (int)(m / 2) : -1);
 }

@@ -14,7 +14,7 @@
 int jump_search(int *array, size_t size, int value)
 {
 	size_t block = sqrt(size);
-	size_t pos = 0;
+	size_t pos = block;
 	size_t limit = 0;
 
 	char *success_msg = "Value found between indexes [%d] and [%d]\n";
@@ -22,6 +22,8 @@ int jump_search(int *array, size_t size, int value)
 
 	if (!array)
 		return (-1);
+	else if (array[0] == value)
+		return (0);
 
 	for (; 1; pos += block)
 	{

@@ -44,11 +44,13 @@ int advanced_binary(int *array, size_t size, int value)
 	print_range(array, l, r);
 	m = (l + r) / 2;
 
+	if (array[l] == value)
+		return (0);
+
 	if (array[m] < value)
 		l = m + 1;
-	else if (array[l] == value)
-		return (0);
-	r = m;
+	else
+		r = m;
 
 	deep_return = advanced_binary(&array[l], (r - l) + 1, value);
 	return ((deep_return == -1) ? -1 : deep_return + l);
